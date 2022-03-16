@@ -6,4 +6,4 @@ before_install:
   - docker build -t rahat/docker-react -f Dockerfile.dev .
 
 script:
-  - docker run rahat/docker-react npm run test -- --coverage
+  - docker run -e CI=true rahat/docker-react npm run test
