@@ -1,0 +1,9 @@
+sudo: required
+services:
+  - docker
+
+before_install:
+  - docker build -t rahat/docker-react -f Dockerfile.dev .
+
+script:
+  - docker run rahat/docker-react npm run test -- --coverage
